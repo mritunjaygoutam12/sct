@@ -1,12 +1,36 @@
-const fs = require('fs');
-const url = './sachin.csv';
+const url = 'https://raw.githubusercontent.com/mritunjaygoutam12/sct/master/src/utilities/sachin.csv';
+import { csv } from 'd3-request';
 
 // More specific way will be to do this work at backend
 // server then responed it to frontend
 
 function record(){
+return new Promise((resolve, reject) => {
+    csv(url, function(err, data) {
+        if(err) reject(err)
+        let final = []
+
+        data.forEach(myFunction);
+
+        function myFunction(item) {
+
+             let tempScr = Number(item.batting_score)
+             if(tempScr>=100){
+                   let subSet = [item.date,tempScr]
+                   final.push(subSet)
+              }
+}
+        resolve(final)   
+}) 
+})
+}
+
+export {record};
+
+
+/*function record(path){
 try {
-    const data = fs.readFileSync(url, 'utf8')
+    const data = fs.readFile(path, 'utf8')
     //console.log(data)
     let recordData = CSVToArray(data)
     return recordData;
@@ -15,7 +39,7 @@ try {
   }
 }
 
-module.exports = record;
+export {record};
 
 function CSVToArray( strData){
     
@@ -60,4 +84,4 @@ function CSVToArray( strData){
     }
     return( arrData );
     //console.log(arrData);
-}
+}*/

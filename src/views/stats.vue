@@ -14,6 +14,7 @@ import chart from '@/components/chart.vue'
 import Vue from 'vue'
 import VueChartkick from 'vue-chartkick'
 import Chart from 'chart.js'
+import {record} from '../utilities/dataCsv.js'
 
 Vue.use(VueChartkick, {adapter: Chart})
 
@@ -28,8 +29,9 @@ export default {
     }
   },
   mounted() {
-    console.log(this.$store.state.data);
-    this.stats = this.$store.state.data;
+    record().then(data => {
+      this.stats = data
+    })
   },
 }
 </script>
