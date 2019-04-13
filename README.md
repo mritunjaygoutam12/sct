@@ -1,4 +1,5 @@
 # sct
+Here instead of fetching data from server after reading CSV. We put it directly in store data by extracting it from uitilies CSV extracter.
 
 ## Project setup
 ```
