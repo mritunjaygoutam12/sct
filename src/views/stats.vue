@@ -27,5 +27,9 @@ export default {
       stats:[['number1', 2], ['age', 5]],
     }
   },
+  mounted() {
+    console.log(this.$store.state.data);
+    this.stats = this.$store.state.data;
+  },
 }
 </script>
