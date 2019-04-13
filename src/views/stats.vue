@@ -3,8 +3,7 @@
   <h3>He has carried the burden of the nation for 21 years.</h3>
     <chart>
     <h3>Stats of his century throughtout his carrier.</h3>
-    <p>dfbdsfb</p>
-    <area-chart :data=data></area-chart>
+    <area-chart :data="stats"></area-chart>
     </chart>
   </div>
 </template>
@@ -22,6 +21,11 @@ export default {
   name: 'home',
   components: {
     chart
-  }
+  },
+  data() {
+    return {
+      stats:[['number1', 2], ['age', 5]],
+    }
+  },
 }
 </script>
