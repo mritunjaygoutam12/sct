@@ -11,6 +11,8 @@ export default new Vuex.Store({
     createPersistedState()
   ],
   state: {
+    // Here we directly put the data after extracting it in utilities 
+    // we can instead fetch it as our backend data
     data : [ [ '9 Sep 1994', 110 ],
     [ '28 Oct 1994', 115 ],
     [ '11 Nov 1994', 105 ],

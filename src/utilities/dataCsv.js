@@ -1,6 +1,8 @@
 const fs = require('fs');
 const url = './sachin.csv';
 
+// More specific way will be to do this work at backend
+// server then responed it to frontend
 
 function record(){
 try {
